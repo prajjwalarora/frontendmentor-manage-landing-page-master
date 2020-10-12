@@ -84,6 +84,10 @@ body {
   cursor: pointer;
   font-weight: 500;
   
+   &:focus {
+    outline: none;
+  }
+  
   &--red {
     background-color: $bright-red;
     color: $very-light-gray;
