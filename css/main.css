@@ -284,6 +284,12 @@ body {
       justify-self: start;
 }
 
+@media only screen and (max-width: 31.25em) {
+  .nav__logo {
+    padding: 0 2.5rem;
+  }
+}
+
 .nav__list {
   list-style: none;
   display: -webkit-box;
