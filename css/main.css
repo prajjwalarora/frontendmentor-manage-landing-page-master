@@ -98,6 +98,10 @@ body {
   font-weight: 500;
 }
 
+.btn:focus {
+  outline: none;
+}
+
 .btn--red {
   background-color: #f25f3a;
   color: #fafafa;
