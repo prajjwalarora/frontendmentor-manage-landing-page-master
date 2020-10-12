@@ -1,0 +1,126 @@
+.features {
+
+  &__text {
+    grid-column: center-start / col-end 4;
+    justify-self: start;
+    align-self: start;
+    display: grid;
+    padding: 10rem 0;
+
+    p {
+      width: 22vw;
+      margin: 3.5rem 0 4rem;
+      @media only screen and (max-width: $bp-medium) {
+        width: 70%;
+        margin: 3.5rem auto 4rem;
+      }
+    }
+    
+    @media only screen and (max-width: $bp-medium) {
+      grid-column: center-start / center-end;
+      grid-row: 4 / 5;
+      padding: 10rem 0 0;
+      justify-self: center;
+      align-self: center;
+      justify-items: center;
+      text-align: center;
+    }
+  }
+
+  &__points {    
+    grid-column: col-start 5 / center-end;
+    justify-self: end;
+    
+    padding: 10rem 0;
+    
+    @media only screen and (max-width: $bp-medium) {
+      grid-column: center-start / center-end;
+      grid-row: 5 / 6;
+      justify-self: center;
+      justify-items: center;
+      display: grid;
+      grid-template-columns: max-content;
+      grid-row-gap: 3rem;
+    }
+  }
+  
+  &__point {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, min-content);
+    grid-template-columns: 52rem;
+    grid-row-gap: 2rem;
+    align-items: center;
+    &:not(:first-child) {
+      margin: 3.5rem 0 4rem;
+    }
+    
+    
+    @media only screen and (max-width: $bp-medium) {
+      justify-items: center;
+    }
+    
+    @media only screen and (max-width: $bp-smallest) {
+     grid-template-columns: 38rem;
+    }
+      
+    .heading-3 {
+      display: inline-block;
+      margin-left: 3.5rem;
+      @media only screen and (max-width: $bp-medium) {
+        margin-left: 2rem;
+      }
+      
+      @media only screen and (max-width: $bp-smallest) {
+        margin-left: .5rem;
+      }
+    }
+    
+    &--header {
+      @media only screen and (max-width: $bp-medium) {
+        background-color: $very-pale-red;
+        width: 80%;
+        border-top-left-radius: 100px;
+        border-bottom-left-radius: 100px;
+      }
+      @media only screen and (max-width: $bp-smallest) {
+        width: 95%;
+      }
+    }
+    
+   &--number {
+     background-color: $bright-red;
+     display: inline-block;
+     padding: 1.3rem 3rem;
+     border-radius: 100px;
+
+     color: $very-light-gray;
+     font-weight: 600;
+     font-size: 1.6rem;
+     
+     @media only screen and (max-width: $bp-smallest) {
+      padding: 1rem 1.8rem;
+    }
+   }
+
+   &--text {
+     margin-top: 1rem;
+   }
+
+   &--paragraph {
+     width: 80%;
+     justify-self: end;
+     
+     @media only screen and (max-width: $bp-medium) {
+     width: 80%;
+     grid-column: 1 / -1;
+     margin: 0 auto;;
+     justify-self: start;
+     }
+     
+     @media only screen and (max-width: $bp-smallest) {
+     width: 98%;
+      }
+   }
+ }
+}

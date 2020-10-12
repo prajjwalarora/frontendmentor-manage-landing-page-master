@@ -1,0 +1,39 @@
+.cta {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+  background-image: linear-gradient($bright-red,$bright-red),url(../images/bg-simplify-section-desktop.svg);
+  background-position: bottom center,top right;
+  background-blend-mode: screen;
+  background-repeat: no-repeat;
+  padding: 8rem 0;
+  @media only screen and (max-width: $bp-medium) {
+    padding: 7rem 0;
+  }
+
+  &__content {
+    grid-column: center-start / center-end;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    @media only screen and (max-width: $bp-medium) {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+  }
+  h2 {
+    color: $very-light-gray;
+    width: 50%;
+    font-weight: 500;
+    
+    @media only screen and (max-width: $bp-medium) {
+      margin-bottom: 3rem;
+      width: 70%;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+  }
+
+}

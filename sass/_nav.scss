@@ -1,0 +1,113 @@
+.nav {
+  grid-column: center-start / center-end;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  position: relative;
+  
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__logo {
+    justify-self: start;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $dark-blue;
+    transition: all 1s;
+    
+    @media only screen and (max-width: $bp-medium) {
+      text-align: center;
+      opacity: 0;
+      display: none;
+      position: absolute;
+      padding: 3.5rem;
+      width: 90%;
+      background-color: #ffffff;
+      left: 50%;
+      top: 190%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 40rem 30rem 35rem rgba(#000, 0.3);
+    }
+  }
+  &__item {
+    transition: all 0.2s;
+    &::after {
+      content: "";
+      display: block;
+      height: 2px;
+      background-color: $dark-blue;
+      width: 0;
+      margin-top: 0.2rem;
+      @media only screen and (max-width: $bp-medium) {
+        display: block;
+        margin-top: 3rem;
+        
+      }
+
+    }
+
+    &:hover {
+      transform: translateY(-3px) scale(1.1);
+
+      &::after {
+        animation: listHover 1s linear;   
+         @media only screen and (max-width: $bp-medium) {
+          animation: none;  
+        }
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: currentColor;
+    
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 2rem;
+    }
+  }
+  &__btn {
+    justify-self: end;
+    @media only screen and (max-width: $bp-medium) {
+      display: none;
+    }
+  }
+}
+
+
+.toggle__btn {
+  font-size: 2.5rem;
+  display: none;
+  cursor: pointer;
+  
+  @media only screen and (max-width: $bp-medium) {
+    display: block;
+    cursor: pointer;
+    align-self: center;
+    justify-self: end;
+    margin-right: 1.5rem;
+    padding-bottom: 2rem;
+  }
+
+}
+
+#toggle {
+  display: none;
+  
+}
+
+#toggle:checked ~ .nav__list {
+  @media only screen and (max-width: $bp-medium) {
+    display: block;
+    opacity: 1;
+    border-radius: 1rem;
+  }
+}

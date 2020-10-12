@@ -1,0 +1,82 @@
+.testemonial {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-rows: repeat(3,max-content);
+  grid-row-gap: 6rem;
+  
+  padding-bottom: 15rem;
+  &-container {
+    
+  overflow-x: scroll;
+  
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  }
+  
+  &-scroll {
+    padding: 5rem 0;
+    padding-bottom: 0;
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+  }
+  
+  &__card {
+    background-color: $very-light-gray;
+    text-align: center;
+    padding: 6rem 4rem 4rem;
+    position: relative;
+    width: 45rem;
+    
+    // @media only screen and (max-width: $bp-small) {
+    //   width: 300rem;
+    // }
+
+    &--image {
+      width: 8rem;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &:not(:last-child) {
+      margin-right: 4rem;
+    }
+  }
+  
+  h2, button {
+    justify-self: center;
+  }
+
+}
+
+.slide__indicaters {
+  display: none;
+  @media only screen and (max-width: $bp-smallest) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    }
+    
+    .slide__indicater {
+      height: 1rem;
+      width: 1rem;
+      border: 1px solid $bright-red;
+      border-radius: 50%;
+      &:not(:last-child) {
+        margin-right: .5rem;
+      }
+      
+      &--active {
+        background-color: $bright-red;
+      }
+    }
+  
+
+}

@@ -1,0 +1,200 @@
+$bright-red: hsl(12, 88%, 59%);
+$dark-blue: hsl(228, 39%, 23%);
+
+$dark-grayish-blue: hsl(227, 12%, 61%);
+$very-dark-blue: hsl(233, 12%, 13%);
+$very-pale-red: hsl(13, 100%, 96%);
+$very-light-gray: hsl(0, 0%, 98%);
+
+
+// RESPONSIVE BREAKPOINTS
+$bp-largest: 75em;   // 1200px
+$bp-large: 62.5em;   // 1000px
+$bp-medium: 50em;    // 800px;
+$bp-small: 43.75em;    // 700px;
+$bp-smallest: 31.25em;    // 500px;
+
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 50%;
+}
+}
+
+body {
+  font-family: "Be Vietnam", sans-serif;
+  line-height: 1;
+  color: $dark-blue;
+  background-image: url(../images/bg-tablet-pattern.svg),
+    url(../images/bg-tablet-pattern.svg);
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: 110% -10%, -60% 75%;
+  
+  @media only screen and (max-width: $bp-medium) {
+    background-position: 110% -1%, -54% 70%;
+  }
+  @media only screen and (max-width: $bp-smallest) {
+    background-position: 264% -3%, 561% 19%;
+    background-size: 90%;
+  }
+}
+
+.container {
+  display: grid;
+
+  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+  grid-template-rows: 15rem 85vh repeat(2, min-content) ;
+  
+  @media only screen and (max-width: $bp-large) {
+    grid-template-columns: [full-start] minmax(4rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(4rem, 1fr) [full-end];
+  }
+  
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-columns: [full-start] minmax(4rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(4rem, 1fr) [full-end];
+    grid-template-rows: 15rem;
+  }
+  
+    @media only screen and (max-width: $bp-small) {
+    grid-template-columns: [full-start] minmax(2rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(2rem, 1fr) [full-end];
+    grid-template-rows: 15rem;
+  }
+  
+  @media only screen and (max-width: $bp-smallest) {
+    grid-template-columns: [full-start] minmax(1rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(1rem, 1fr) [full-end];
+  }
+}
+
+.btn {
+  border: none;
+  border-radius: 100px;
+  height: 4rem;
+  width: 13rem;
+  transition: all 0.2s;
+  cursor: pointer;
+  font-weight: 500;
+  
+  &--red {
+    background-color: $bright-red;
+    color: $very-light-gray;
+    box-shadow: 0 0.7rem 0.8rem rgba($bright-red, 0.3);
+    &:hover {
+    background-color: hsl(12, 100%, 79%);
+    transform: translateY(-3px);
+    }
+  }
+  
+  &--white {
+    background-color: $very-light-gray;
+    color: $bright-red;
+    box-shadow: 0 0.7rem 0.8rem rgba(#000, 0.1);
+    &:hover {
+      transform: translateY(-3px);
+    }
+  }
+
+
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.35rem 0.4rem rgba($bright-red, 0.7);
+  }
+  
+
+}
+
+
+
+.email__error {
+  display: none;
+  color: $bright-red;
+  margin: .5rem 1rem;
+  opacity: .8;
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  @media only screen and (max-width: $bp-medium) {
+    top: 68%;
+    left: 10%;
+  }
+    
+  @media only screen and (max-width: $bp-smallest) {
+    top: 65%;
+    left: 4%;
+  }
+  
+  
+}
+
+
+.hamburger {
+  height: 2px;
+  width: 3rem;
+  background-color: $very-dark-blue;
+  position: relative;
+  &::after,
+  &::before {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 3rem;
+    position: absolute;
+    background-color: currentColor;
+  }
+  
+  &::before {
+    top: -.7rem;
+  }
+  
+  &::after {
+    top: .7rem;
+  }
+
+}
+
+#toggle:checked + .toggle__btn .hamburger {
+  background-color: transparent;
+  
+}
+
+#toggle:checked + .toggle__btn .hamburger::before {
+  top: 0;
+  transform: rotate(135deg);
+  
+}
+
+#toggle:checked + .toggle__btn .hamburger::after {
+  top: 0;
+  transform: rotate(-135deg);
+}
+
+@keyframes listHover {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+
