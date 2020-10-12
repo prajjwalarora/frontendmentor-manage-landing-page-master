@@ -11,6 +11,10 @@
 
   &__logo {
     justify-self: start;
+    
+     @media only screen and (max-width: $bp-smallest) {
+      padding: 0 2.5rem;
+    }
   }
 
   &__list {
